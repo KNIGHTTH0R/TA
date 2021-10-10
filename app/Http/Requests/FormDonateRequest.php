@@ -28,6 +28,7 @@ class FormDonateRequest extends FormRequest
             'email' => 'required|email',
             'amount' => 'required|numeric',
             'pay' => 'required',
+            'pray' => '',
         ];
     }
 }
