@@ -17,6 +17,7 @@ class Transaction extends Model
         'user_id',
         'amount',
         'anonim',
+        'pay',
         // 'snap_token',
         'status'
     ];
