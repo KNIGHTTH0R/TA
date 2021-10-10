@@ -1,1 +1,1 @@
-## Build Chariy App
+## Build Charity App
