@@ -37,7 +37,7 @@ class TransactionFactory extends Factory
             'user_id' => rand(min($users), max($users)),
             'campaign_id' => rand(min($campaign_id), max($campaign_id)),
             'amount' => rand(20000000,40000000),
-            'anonim' => $this->faker->boolean(3),
+            'anonim' => rand(0,1),
             'status' => $arr_status[$index]
         ];
     }
