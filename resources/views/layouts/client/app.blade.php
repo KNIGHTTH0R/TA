@@ -36,6 +36,8 @@
 
 
 
+    @stack('js')
+
     @include('partials.client.footer')
 
     @stack('js')
