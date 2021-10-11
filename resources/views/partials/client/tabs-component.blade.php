@@ -13,7 +13,7 @@
             <div class="text-blue-500 text-3xl lg:text-2xl font-semibold text-center lg:text-left mb-10 lg:mb-5">
                 Top Donatur
             </div>
-            @forelse($transactions as $key => $transaction)
+            @forelse($top_donaturs as $key => $donatur)
             @php
                 $bg = '';
                 if ($key == 0) {
@@ -35,8 +35,8 @@
                         </svg>
                     </div>
                     <div class="p-3">
-                        <p class="text-lg font-semibold">{{ $transaction->user->name }}</p>
-                        <p class="text-md text-coolGray-500 font-medium">Rp. {{ $transaction->amount }}</p>
+                        <p class="text-md font-semibold">{{ $donatur->user->name }}</p>
+                        <p class="text-md text-coolGray-500 font-medium">Rp. {{ $donatur->amount }}</p>
                     </div>
                 </div>
             </div>

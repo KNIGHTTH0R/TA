@@ -40,7 +40,7 @@ class Transaction extends Model
 
     public function scopeAmount($query)
     {
-        return $query->where('campaign_id', $this->campaign->id);
+        return $query->where('status', 'success')->orderByDesc('amount');
     }
 
     public function scopeSuccess($query)

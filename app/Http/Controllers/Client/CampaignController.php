@@ -12,8 +12,15 @@ class CampaignController extends Controller
     public function show(Campaign $campaign)
     {
         $campaign->load('distributions');
-        $transactions = Transaction::where('campaign_id', $campaign->id)->success()->get();
-        $collect = Transaction::where('campaign_id', $campaign->id)->success()->collect();
+        $transactions = Transaction::where('campaign_id', $campaign->id)
+                ->success()
+                ->get();
+        $collect = Transaction::where('campaign_id', $campaign->id)
+                ->success()
+                ->collect();
+        $top_donaturs = Transaction::where('campaign_id', $campaign->id)
+                ->amount()
+                ->get();
 
         //12.345.678 => 12345678
         $target = str_replace('.', '', $campaign->target);
@@ -22,7 +29,7 @@ class CampaignController extends Controller
         //12.345678 => 12.34
         $progress = round($average, 2);
 
-        return view('client.campaign.detail', compact('campaign', 'transactions', 'collect', 'progress'));
+        return view('client.campaign.detail', compact('campaign', 'transactions', 'collect', 'top_donaturs', 'progress'));
     }
 
     public function form(Campaign $campaign)
