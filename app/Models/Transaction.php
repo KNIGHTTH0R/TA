@@ -32,4 +32,24 @@ class Transaction extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getAmountAttribute($value)
+    {
+        return str_replace(',','.', number_format(($value)));
+    }
+
+    public function scopeAmount($query)
+    {
+        return $query->where('campaign_id', $this->campaign->id);
+    }
+
+    public function scopeSuccess($query)
+    {
+        return $query->where('status', 'success')->orderByDesc('created_at');
+    }
+
+    public function scopeCollect($query)
+    {
+        return $query->sum('amount');
+    }
 }

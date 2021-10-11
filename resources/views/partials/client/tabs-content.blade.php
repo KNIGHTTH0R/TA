@@ -1,57 +1,40 @@
  <!-- Tab Contents -->
  <div id="tab-contents" class="mt-5 px-0 sm:px-20 md:px-30 lg:px-0">
      <div id="first">
-        {{ $campaign->stories }}
+        <p class="text-coolGray-600">{{ $campaign->stories }}</p>
      </div>
      <div id="second">
-         <div class="flex p-2 md:pl-8 lg:p-3 mb-3">
-             <div class="flex-1 pl-1 pr-5">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-coolGray-400" viewBox="0 0 20 20" fill="currentColor">
-                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
-                 </svg>
+        @forelse($transactions as $transaction)
+            <div class="flex p-2 md:pl-8 lg:p-3 mb-3">
+             <div class="pl-1 pr-5">
+                <img src="{{ $transaction->user->image }}" class="w-11 h-11 rounded-full">
              </div>
-             <div class="">
-                 <h1 class="text-coolGray-700 font-semibold text-lg">Dian</h1>
-                 <p class="mb-3 text-coolGray-500 font-medium text-sm">Rp. 300.000</p>
-                 <p class="text-coolGray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit cum
-                     ea laudantium? Eum, repellat.</p>
+             <div class="flex-1">
+                 <h1 class="text-coolGray-700 font-semibold text-md">{{ $transaction->user->name }}</h1>
+                 <p class="mb-3 text-coolGray-500 font-medium text-md">Rp. {{ $transaction->amount }}</p>
+                 <p class="text-coolGray-600">{{ $transaction->pray ?? '-' }}</p>
              </div>
          </div>
-         <div class="flex p-2 md:pl-8 lg:p-3 mb-3">
-             <div class="flex-1 pl-1 pr-5">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-coolGray-400" viewBox="0 0 20 20" fill="currentColor">
-                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
-                 </svg>
-             </div>
-             <div class="">
-                 <h1 class="text-coolGray-700 font-semibold text-lg">Zulkifli</h1>
-                 <p class="mb-3 text-coolGray-500 font-medium text-sm">Rp. 500.000</p>
-                 <p class="text-coolGray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit cum
-                     ea laudantium? Eum, repellat.</p>
-             </div>
-         </div>
-         <div class="flex p-2 md:pl-8 lg:p-3 mb-3">
-             <div class="flex-1 pl-1 pr-5">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-coolGray-400" viewBox="0 0 20 20" fill="currentColor">
-                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
-                 </svg>
-             </div>
-             <div class="">
-                 <h1 class="text-coolGray-700 font-semibold text-lg">Budi</h1>
-                 <p class="mb-3 text-coolGray-500 font-medium text-sm">Rp. 400.000</p>
-                 <p class="text-coolGray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit cum
-                     ea laudantium? Eum, repellat.</p>
-             </div>
-         </div>
+         @empty
+            <div>
+                <span class="block pl-4 text-coolGray-500">Belum ada donasi</span>
+            </div>
+        @endforelse
+
          <div class="text-center">
-             <a href="#" class="text-blue-400 hover:text-blue-500 hover:underline">Lebih banyak</a>
+             {{-- <a href="#" class="text-blue-400 hover:text-blue-500 hover:underline">Lebih banyak</a> --}}
          </div>
      </div>
-     <div id="third">
-         Distribusi Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusamus
-         animi
-         ipsa possimus corrupti autem officiis mollitia neque veniam harum molestias excepturi
-         deleniti
-         consequuntur ex, fugit architecto quibusdam quod voluptatem.
+     <div id="third" class="space-y-6">
+        @forelse($campaign->distributions as $distribution)
+            <div>
+                <span class="font-semibold mb-2 text-coolGray-500">{{ $distribution->created_at->format('d M Y') }}</span>
+                <p>{{ $distribution->stories }}</p>
+            </div>
+        @empty
+            <div>
+                <span class="text-coolGray-500">Belum ada distribusi</span>
+            </div>
+        @endforelse
      </div>
  </div>

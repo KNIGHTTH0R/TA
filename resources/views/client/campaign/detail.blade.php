@@ -14,16 +14,17 @@
             <div class="mt-6 mb-6 flex flex-row items-center justify-between">
                 <div class="mr-1">
                     <p class="text-lg font-semibold text-coolGray-500">Terkumpul</p>
-                    <p class="text-2xl lg:text-3xl font-bold text-sky-600">Rp. 5.000.000</p>
+                    <p class="text-2xl lg:text-3xl font-bold text-sky-600">Rp. {{ str_replace(',','.', number_format(($collect))) }}</p>
                 </div>
                 <div class="text-coolGray-500">
                     <p class="text-lg font-semibold">Dibutuhkan</p>
-                    <p class="text-xl lg:text-2xl font-bold">Rp. {{ str_replace(',','.', number_format($campaign->target)) }}</p>
+                    <p class="text-xl lg:text-2xl font-bold">Rp. {{ $campaign->target }}</p>
                 </div>
             </div>
+
             <div class="progress mt-3 mb-5 w-full">
                 <div class="bg-sky-200 h-2 rounded-md"></div>
-                <div class="bg-sky-600 w-1/5 h-2 rounded-md -mt-2"></div>
+                <div class="bg-sky-600 h-2 rounded-md -mt-2" style="width:{{ $progress }}%"></div>
             </div>
             <div class="flex flex-row justify-between font-semibold text-lg text-coolGray-500">
                 <span>Terbuka</span>
@@ -45,7 +46,6 @@
         let tabsContainer = document.querySelector("#tabs");
 
         let tabTogglers = tabsContainer.querySelectorAll("a");
-        console.log(tabTogglers);
 
         tabTogglers.forEach(function (toggler) {
             toggler.addEventListener("click", function (e) {
