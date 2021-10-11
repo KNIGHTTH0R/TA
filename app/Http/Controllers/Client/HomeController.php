@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $campaigns = Campaign::latest()->get();
+        $campaigns = Campaign::latest()->active()->get();
 
         return view('layouts.client.app', compact('campaigns'));
     }

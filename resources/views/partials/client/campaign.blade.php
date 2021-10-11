@@ -27,7 +27,7 @@
                         </div>
                         <div class="flex flex-wrap justify-between pt-1 space-x-2 text-xs text-coolGray-600">
                             <span>Rp. {{ $campaign->target }}</span>
-                            <span>{{ $campaign->date_end }} hari lagi</span>
+                            <span>{{ $campaign->format_date_end }} hari lagi</span>
                         </div>
                     </div>
                 </article>

@@ -42,12 +42,17 @@ class Campaign extends Model
         return str_replace(',','.', number_format($value));
     }
 
-    public function getDateEndAttribute($value)
+    public function getFormatDateEndAttribute()
     {
         $now = new DateTime(date('Y-m-d'));
-        $target = new DateTime($value);
+        $target = new DateTime($this->date_end);
         $duration = $now->diff($target);
 
         return $duration->format('%a');
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('date_end', '>', date('Y-m-d'));
     }
 }
