@@ -23,7 +23,7 @@
                         </p>
                         <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-coolGray-600">
                             <span>{{ date('d M Y', strtotime($campaign->date_end)) }}</span>
-                            <span>10 hari lagi</span>
+                            <span>{{ $campaign->date_end }} hari lagi</span>
                         </div>
                     </div>
                 </article>

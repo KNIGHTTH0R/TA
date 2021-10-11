@@ -28,7 +28,7 @@
             </div>
             <div class="flex flex-row justify-between font-semibold text-lg text-coolGray-500">
                 <span>Terbuka</span>
-                <span>10 hari lagi</span>
+                <span>{{ $campaign->date_end }} hari lagi</span>
             </div>
             <a href="{{ route('donasi.form', $campaign) }}" class="text-center px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-sky-200 text-sky-600 transition ease-in-out duration-500 hover:text-sky-100 hover:bg-sky-600">Donasi
             Sekarang</a>
