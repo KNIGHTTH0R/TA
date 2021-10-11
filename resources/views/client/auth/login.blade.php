@@ -30,7 +30,7 @@
                 @enderror
             </div>
 
-            <span class="block text-red-400 text-sm mt-2">username or password is incorrect</span>
+            {{-- <span class="block text-red-400 text-sm mt-2">username or password is incorrect</span> --}}
 
             <div class="mt-6">
                 <button class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 ease-out transform bg-sky-600 rounded-md hover:bg-sky-500 focus:outline-none focus:bg-gray-600">

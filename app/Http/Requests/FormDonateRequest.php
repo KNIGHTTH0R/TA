@@ -24,11 +24,12 @@ class FormDonateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'amount' => 'required|numeric',
-            'pay' => 'required',
+            'name' => '',
+            'email' => '',
+            'anonim' => '',
             'pray' => '',
+            'pay' => 'required',
+            'amount' => 'required|numeric',
         ];
     }
 }

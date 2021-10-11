@@ -19,28 +19,14 @@
                         <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-coolGray-50">
                             <div class="grid grid-cols-6 gap-4 col-span-full">
                                 <div class="col-span-full space-y-3">
-                                    <label for="firstname" class="text-sm">Nama</label>
-                                    <input id="firstname" type="text" name="name" class="w-full p-3 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-600 focus:outline-none border-coolGray-300 text-coolGray-900" autocomplete="off" value="{{ old('name') }}">
-                                    @error('name')
-                                        <span class="text-red-400 text-sm">{{ $message }}</span>
-                                    @enderror
-                                    <div class="flex items-center space-x-1">
-                                        <input type="checkbox" name="anonim" id="checkbox"><label for="checkbox" class="text-xs text-coolGray-400">Jadikan Hamba Allah</label>
-                                    </div>
-                                </div>
-                                <div class="col-span-full space-y-3">
-                                    <label for="email" class="text-sm">Email</label>
-                                    <input id="email" type="email" name="email" class="w-full p-3 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-600 focus:outline-none border-coolGray-300 text-coolGray-900" autocomplete="off" value="{{ old('email') }}">
-                                    @error('email')
-                                        <span class="text-red-400 text-sm">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="col-span-full space-y-3">
                                     <label for="amount" class="text-sm">Jumlah</label>
                                     <input id="amount" type="number" name="amount" class="w-full p-3 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-600 focus:outline-none border-coolGray-300 text-coolGray-900" autocomplete="off" value="{{ old('amount') }}">
                                     @error('amount')
                                         <span class="text-red-400 text-sm">{{ $message }}</span>
                                     @enderror
+                                    <div class="flex items-center space-x-1">
+                                        <input type="checkbox" name="anonim" id="checkbox" {{ 'checked' ? 'value=true': 'value=false' }}><label for="checkbox" class="text-xs text-coolGray-400">Jadikan Hamba Allah</label>
+                                    </div>
                                 </div>
                                 <div class="col-span-full">
                                     <label for="email" class="text-sm">Pembayaran</label>
@@ -61,7 +47,7 @@
                                             </label>
                                         </div>
                                         @error('pay')
-                                            <span class="text-red-400 text-sm">{{ $message }}</span>
+                                        <span class="text-red-400 text-sm">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
