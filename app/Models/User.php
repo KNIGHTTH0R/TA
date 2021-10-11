@@ -49,4 +49,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Transaction::class);
     }
+
+    public function getImageAttribute($image)
+    {
+        if ($image != null) {
+            return asset('donaturs/' . $image);
+        } else {
+            return 'https://ui-avatars.com/api?name=' . str_replace(' ', '+', $this->name)
+                . '&background=4e73df&color=ffffff&size=100';
+        }
+    }
 }
