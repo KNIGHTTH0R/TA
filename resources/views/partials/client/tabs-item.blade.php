@@ -4,7 +4,7 @@
          <a id="default-tab" href="#first" class="text-lg lg:text-md">Cerita</a>
      </li>
      <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50">
-         <a href="#second" class="text-lg lg:text-md">Donasi</a>
+         <a href="#second" class="text-lg lg:text-md">Donatur</a>
      </li>
      <li class="px-4 py-2 font-semibold text-gray-800 rounded-t opacity-50">
          <a href="#third" class="text-lg lg:text-md">Penyaluran</a>
