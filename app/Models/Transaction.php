@@ -18,6 +18,7 @@ class Transaction extends Model
         'amount',
         'anonim',
         'pay',
+        'pray',
         // 'snap_token',
         'status'
     ];
