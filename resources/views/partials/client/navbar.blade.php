@@ -11,8 +11,15 @@
             </a>
         </div>
         <div class="items-center flex-shrink-0 hidden md:flex space-x-3">
-            <a href="{{ route('auth.register') }}" class="px-6 py-3 font-semibold border rounded border-coolGray-800 hover:border-transparent hover:bg-sky-600 hover:text-coolGray-50 transition ease-in-out duration-500">Daftar</a>
-            <a href="{{ route('auth.login') }}" class="px-6 py-3 font-semibold rounded bg-sky-600 text-coolGray-50">Masuk</a>
+            @auth
+                <a href="#" class="px-6 py-3 font-semibold">Home</a>
+                <a href="#" class="px-6 py-3 font-semibold">Dashboard</a>
+                <span class="px-6 py-3 font-semibold text-sky-600">Halo, Zulkili</span>
+            @endauth
+            @guest
+                <a href="{{ route('auth.register') }}" class="px-6 py-3 font-semibold border rounded border-coolGray-800 hover:border-transparent hover:bg-sky-600 hover:text-coolGray-50 transition ease-in-out duration-500">Daftar</a>
+                <a href="{{ route('auth.login') }}" class="px-6 py-3 font-semibold rounded bg-sky-600 text-coolGray-50">Masuk</a>
+            @endguest
         </div>
         <button class="p-4 md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-coolGray-800">
