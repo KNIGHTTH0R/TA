@@ -46,19 +46,19 @@ class TransactionController extends Controller
         $firstname = $exFullname[0];
         $lastname = count($exFullname) > 0 ? implode(' ', array_slice($exFullname, 1)) : '';
 
-        // $amount = str_replace(',','.',number_format($formDonateRequest->amount));
+        $amount = (int) str_replace('.','',$transaction->amount);
 
         $transaction_details = [
             'order_id' => $transaction->invoice,
-            'gross_amount' => str_replace('.', '', $transaction->amount),
+            'gross_amount' => $amount,
         ];
 
         $item_details = [
             [
                 'id' => $transaction->campaign->id,
-                'name' => $transaction->campaign->title,
+                'name' => Str::limit($transaction->campaign->title, 20),
                 'quantity' => 1,
-                'price' => str_replace('.', '', $transaction->amount),
+                'price' => $amount,
             ]
         ];
 
