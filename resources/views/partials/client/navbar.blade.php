@@ -12,9 +12,9 @@
         </div>
         <div class="items-center flex-shrink-0 hidden md:flex space-x-3">
             @auth
-                <a href="#" class="px-6 py-3 font-semibold">Home</a>
+                <a href="{{ route('home.index') }}" class="px-6 py-3 font-semibold">Home</a>
                 <a href="#" class="px-6 py-3 font-semibold">Dashboard</a>
-                <span class="px-6 py-3 font-semibold text-sky-600">Halo, Zulkili</span>
+                <span class="px-6 py-3 font-semibold text-sky-600">Halo, {{ auth()->user()->name }}</span>
             @endauth
             @guest
                 <a href="{{ route('auth.register') }}" class="px-6 py-3 font-semibold border rounded border-coolGray-800 hover:border-transparent hover:bg-sky-600 hover:text-coolGray-50 transition ease-in-out duration-500">Daftar</a>
