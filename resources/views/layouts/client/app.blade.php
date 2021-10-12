@@ -35,10 +35,12 @@
     @endif
 
 
+    @include('partials.client.footer')
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-odJHmb3AW_fu7BqO"></script>
 
     @stack('js')
-
-    @include('partials.client.footer')
 </body>
 
 </html>
