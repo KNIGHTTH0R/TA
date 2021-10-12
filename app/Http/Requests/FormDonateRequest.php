@@ -29,7 +29,7 @@ class FormDonateRequest extends FormRequest
             'anonim' => '',
             'pray' => '',
             'pay' => 'required',
-            'amount' => 'required|numeric',
+            'amount' => 'required|min:5',
         ];
     }
 }
