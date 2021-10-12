@@ -13,7 +13,7 @@
         <div class="items-center flex-shrink-0 hidden md:flex space-x-3">
             @auth
                 <a href="{{ route('home.index') }}" class="px-6 py-3 font-semibold">Home</a>
-                <a href="#" class="px-6 py-3 font-semibold">Dashboard</a>
+                <a href="{{ route('auth.dashboard.index') }}" class="px-6 py-3 font-semibold">Dashboard</a>
                 <span class="px-6 py-3 font-semibold text-sky-600">Halo, {{ auth()->user()->name }}</span>
             @endauth
             @guest
