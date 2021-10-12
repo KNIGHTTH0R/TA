@@ -94,7 +94,9 @@
             }
 
             if (payRadio[i].checked) {
-                payItem[i].style.border = '2px solid #7C83FD'
+                payItem[i].style.borderRadius = '3px'
+                payItem[i].style.background = 'aliceblue'
+                payItem[i].style.border = '2px solid #A2D2FF'
             }
         })
     }
