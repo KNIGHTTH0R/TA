@@ -21,13 +21,15 @@
                         <p class="mb-2 text-gray-700">
                             {{ Str::limit($campaign->stories, 100) }}
                         </p>
-                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs font-semibold text-coolGray-600">
-                            <span>Target</span>
-                            <span>Sisa</span>
-                        </div>
-                        <div class="flex flex-wrap justify-between pt-1 space-x-2 text-xs text-coolGray-600">
-                            <span>Rp. {{ $campaign->target }}</span>
-                            <span>{{ $campaign->format_date_end }} hari lagi</span>
+                        <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs">
+                            <div>
+                                <span class="block font-semibold">Target</span>
+                                <span class="text-coolGray-200">Rp. {{ $campaign->target }}</span>
+                            </div>
+                            <div>
+                                <span class="block font-semibold">Sisa</span>
+                                <span>{{ $campaign->format_date_end }} hari</span>
+                            </div>
                         </div>
                     </div>
                 </article>

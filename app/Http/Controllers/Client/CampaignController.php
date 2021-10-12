@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class CampaignController extends Controller
 {
     public function show(Campaign $campaign)
-    {
+    {;
         $campaign->load('distributions');
         $transactions = Transaction::where('campaign_id', $campaign->id)
                 ->success()
