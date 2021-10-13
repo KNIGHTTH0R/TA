@@ -9,7 +9,11 @@ use App\Http\Controllers\Client\TransactionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/', function() {
+    return 'Coming Soon 😁';
+});
+
+Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 
 Route::prefix('auth')->as('auth.')->group(function() {
     // guest
