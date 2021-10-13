@@ -14,8 +14,14 @@
             @auth
                 <a href="{{ route('home.index') }}" class="px-6 py-3 font-semibold">Home</a>
                 <a href="{{ route('auth.dashboard.index') }}" class="px-6 py-3 font-semibold">Dashboard</a>
+                <a href="javascript:void" class="px-6 py-3 font-semibold" onclick="$('#logout').submit();">Keluar</a>
                 <span class="px-6 py-3 font-semibold text-sky-600">Halo, {{ auth()->user()->name }}</span>
             @endauth
+
+            <form action="{{ route('auth.logout') }}" method="post" id="logout">
+                @csrf
+            </form>
+
             @guest
                 <a href="{{ route('auth.register') }}" class="px-6 py-3 font-semibold border rounded border-coolGray-800 hover:border-transparent hover:bg-sky-600 hover:text-coolGray-50 transition ease-in-out duration-500">Daftar</a>
                 <a href="{{ route('auth.login') }}" class="px-6 py-3 font-semibold rounded bg-sky-600 text-coolGray-50">Masuk</a>
