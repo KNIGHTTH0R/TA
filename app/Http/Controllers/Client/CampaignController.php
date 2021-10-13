@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class CampaignController extends Controller
 {
     public function show(Campaign $campaign)
-    {;
+    {
         $campaign->load('distributions');
         $transactions = Transaction::where('campaign_id', $campaign->id)
                 ->success()
@@ -20,6 +20,7 @@ class CampaignController extends Controller
                 ->collect();
         $top_donaturs = Transaction::where('campaign_id', $campaign->id)
                 ->amount()
+                ->take(3)
                 ->get();
 
         //12.345.678 => 12345678
