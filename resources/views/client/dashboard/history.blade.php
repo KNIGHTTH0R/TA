@@ -1,6 +1,6 @@
 @extends('layouts.client.app')
 
-@section('title', 'Histiry Donasi')
+@section('title', 'History Donasi')
 
 @section('content')
 
@@ -28,8 +28,8 @@
                                     $bg = 'bg-red-500';
                                     $text = 'text-red-100';
                                 } else if ($history->status == 'success') {
-                                    $bg = 'bg-success-500';
-                                    $text = 'text-success-100';
+                                    $bg = 'bg-green-500';
+                                    $text = 'text-green-100';
                                 }
                             @endphp
                             <li class="flex items-start space-x-3">

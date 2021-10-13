@@ -16,7 +16,6 @@ class DashboardController extends Controller
     }
     public function index()
     {
-
         $transaction_pending = $this->transaction->userId()->pending()->get();
         $transaction_expired = $this->transaction->userId()->expired()->get();
         $transaction_failed = $this->transaction->userId()->failed()->get();
