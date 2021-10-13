@@ -17,11 +17,11 @@
             @php
                 $bg = '';
                 if ($key == 0) {
-                    $bg = 'bg-blue-400';
+                    $bg = 'bg-blue-500';
                 } else if ($key == 1) {
-                    $bg = 'bg-yellow-400';
+                    $bg = 'bg-yellow-500';
                 } else {
-                    $bg = 'bg-red-400';
+                    $bg = 'bg-green-500';
                 }
             @endphp
             <div>

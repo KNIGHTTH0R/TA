@@ -12,7 +12,7 @@
              <div class="flex-1">
                  <h1 class="text-coolGray-700 font-semibold text-md">{{ $transaction->user->name }}</h1>
                  <p class="mb-3 text-coolGray-500 font-medium text-md">Rp. {{ $transaction->amount }}</p>
-                 <p class="text-coolGray-600">{{ $transaction->pray ?? '-' }}</p>
+                 <p class="text-coolGray-600">{{ $transaction->pray ?? '' }}</p>
              </div>
          </div>
          @empty

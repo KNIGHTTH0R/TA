@@ -9,11 +9,7 @@ use App\Http\Controllers\Client\TransactionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function() {
-    return 'Coming Soon 😁';
-});
-
-Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::prefix('auth')->as('auth.')->group(function() {
     // guest
@@ -53,10 +49,3 @@ Route::prefix('donasi')->as('donasi.')->group(function() {
         Route::view('/finish', 'client.campaign.finish');
     });
 });
-
-
-/**
- * TODO
- * 1. page dashboard
- * 2. link navbar for donatur
- */
