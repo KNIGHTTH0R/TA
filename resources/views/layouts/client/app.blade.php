@@ -21,6 +21,7 @@
         }
     </style>
     @stack('css')
+    @livewireStyles
 </head>
 <body>
 
@@ -41,6 +42,7 @@
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-odJHmb3AW_fu7BqO"></script>
 
     @stack('js')
+    @livewireScripts
 </body>
 
 </html>
