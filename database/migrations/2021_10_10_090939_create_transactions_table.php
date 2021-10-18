@@ -20,7 +20,6 @@ class CreateTransactionsTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->integer('amount');
             $table->boolean('anonim')->default(false)->nullable();
-            // $table->string('snap_token');
             $table->enum('status',['pending', 'success', 'cancel', 'expired'])->default('pending');
             $table->timestamps();
         });

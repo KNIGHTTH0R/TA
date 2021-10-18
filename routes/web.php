@@ -6,6 +6,7 @@ use App\Http\Controllers\Client\CampaignController;
 use App\Http\Controllers\Client\DashboardController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\TransactionController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,10 @@ Route::prefix('auth')->as('auth.')->group(function() {
         Route::prefix('dashboard')->group(function() {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
             Route::get('/history', [DashboardController::class, 'history'])->name('dashboard.history');
+            Route::get('/my-donate', [DashboardController::class, 'myDonate'])->name('dashboard.my-donate');
+
+            Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+            Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
         });
 
 

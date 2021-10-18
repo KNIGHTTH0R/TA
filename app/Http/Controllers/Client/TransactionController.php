@@ -79,6 +79,9 @@ class TransactionController extends Controller
 
         $token = Snap::getSnapToken($params);
 
+        // update snap token
+        $transaction->update(['snap_token' => $token]);
+
         return response()->json([
             'token' => $token
         ]);

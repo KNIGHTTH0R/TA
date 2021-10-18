@@ -19,18 +19,18 @@
                         <ul class="space-y-8">
                             @forelse($histories as $history)
                             @php
-                                $bg = '';
-                                $text = '';
-                                if ($history->status == 'pending') {
-                                    $bg = 'bg-yellow-500';
-                                    $text = 'text-yellow-100';
-                                } else if ($history->status == 'failed') {
-                                    $bg = 'bg-red-500';
-                                    $text = 'text-red-100';
-                                } else if ($history->status == 'success') {
-                                    $bg = 'bg-green-500';
-                                    $text = 'text-green-100';
-                                }
+                            $bg = '';
+                            $text = '';
+                            if ($history->status == 'pending') {
+                            $bg = 'bg-yellow-500';
+                            $text = 'text-yellow-100';
+                            } else if ($history->status == 'failed') {
+                            $bg = 'bg-red-500';
+                            $text = 'text-red-100';
+                            } else if ($history->status == 'success') {
+                            $bg = 'bg-green-500';
+                            $text = 'text-green-100';
+                            }
                             @endphp
                             <li class="flex items-start space-x-3">
                                 <div class="flex-1 space-y-2">
@@ -51,12 +51,13 @@
                             @endforelse
                         </ul>
                     </div>
-                    <!-- <div>
-                            <a href="#" class="text-blue-400 hover:text-blue-500 hover:underline">Lebih banyak</a>
-                        </div> -->
+                    <div class="flex justify-center">
+                        <button type="button" class="px-6 py-3 text-sm rounded-md hover:underline bg-coolGray-50 text-coolGray-600">Lebih banyak</button>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 @endsection
