@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
-use App\Models\Campaign;
-use App\Models\Transaction;
+use App\Models\User\User;
+use App\Models\Campaign\Campaign;
+use App\Models\Transaction\Transaction;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

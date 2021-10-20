@@ -1,22 +1,19 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Distribution;
 
-use App\Models\Campaign;
+use App\Models\Campaign\Campaign;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Distribution\DistributionRelationship;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Distribution extends Model
 {
     use HasFactory;
+    use DistributionRelationship;
 
     protected $fillable = [
         'amount',
         'stories',
     ];
-
-    public function campaign()
-    {
-        return $this->belongsTo(Campaign::class);
-    }
 }

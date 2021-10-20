@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Client;
 
 use Midtrans\Snap;
 use Midtrans\Config;
-use App\Models\Campaign;
+use App\Models\Campaign\Campaign;
 use Midtrans\Notification;
-use App\Models\Transaction;
+use App\Models\Transaction\Transaction;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -23,7 +23,7 @@ class TransactionController extends Controller
 
     public function store(FormDonateRequest $formDonateRequest, Campaign $campaign)
     {
-        $transaction = $campaign->transanctions()->create([
+        $transaction = $campaign->transactions()->create([
             'invoice' => 'NFB'. date('dmY') . Str::upper(Str::random(10)),
             'user_id' => auth()->user()->id,
             'amount' => $formDonateRequest->amount,

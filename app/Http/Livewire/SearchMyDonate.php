@@ -2,24 +2,22 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Transaction;
 use Livewire\Component;
+use App\Models\Transaction\Transaction;
 
 class SearchMyDonate extends Component
 {
     public $search;
-    public $transactions;
     public $transaction_pending;
 
     public function render()
     {
-        $this->transactions = Transaction::with('campaign')
+        $this->transaction_pending = Transaction::with('campaign')
                             ->whereHas('campaign', function($query) {
-                                $query->where('title', 'like', '%'.$this->search.'%');
-                            })->get();
-
-        $this->transaction_pending = Transaction::where('user_id', auth()->user()->id)
+                                $query->where('title', 'LIKE', '%'.$this->search.'%');
+                            })
                             ->where('status', 'pending')
+                            ->where('user_id', auth()->user()->id)
                             ->latest()
                             ->take(3)
                             ->get();

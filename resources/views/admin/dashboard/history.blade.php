@@ -51,9 +51,11 @@
                             @endforelse
                         </ul>
                     </div>
-                    <div class="flex justify-center">
-                        <button type="button" class="px-6 py-3 text-sm rounded-md hover:underline bg-coolGray-50 text-coolGray-600">Lebih banyak</button>
-                    </div>
+                    @if(count($histories) > 3)
+                        <div class="flex justify-center">
+                            <button type="button" class="px-6 py-3 text-sm rounded-md hover:underline bg-coolGray-50 text-coolGray-600">Lebih banyak</button>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

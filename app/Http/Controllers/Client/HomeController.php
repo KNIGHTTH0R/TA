@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Client;
 
-use App\Http\Controllers\Controller;
-use App\Models\Campaign;
 use Illuminate\Http\Request;
+use App\Models\Campaign\Campaign;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

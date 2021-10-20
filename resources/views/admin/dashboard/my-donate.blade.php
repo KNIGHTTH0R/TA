@@ -25,27 +25,3 @@
 </section>
 
 @endsection
-
-@push('js')
-<script>
-    let snap_token = $("#snap_token").val()
-
-    $("#btn-pay").click(function() {
-        snap.pay(snap_token, {
-            // Optional
-            onSuccess: function(result) {
-                //window.location.href = '/donasi/finish'
-            },
-            // Optional
-            onPending: function(result) {
-                //window.location.href = '/donasi/finish'
-            },
-            // Optional
-            onError: function(result) {
-                //window.location.href = '/donasi/finish'
-            }
-        });
-    })
-
-</script>
-@endpush

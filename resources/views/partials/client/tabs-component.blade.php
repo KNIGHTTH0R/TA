@@ -35,7 +35,7 @@
                         </svg>
                     </div>
                     <div class="p-3">
-                        <p class="text-md font-semibold">{{ $donatur->user->name }}</p>
+                        <p class="text-md font-semibold">{{ $donatur->anonim ? 'Hamba Allah' : $donatur->user->name }}</p>
                         <p class="text-md text-coolGray-500 font-medium">Rp. {{ $donatur->amount }}</p>
                     </div>
                 </div>

@@ -1,9 +1,9 @@
 <div>
     <div class="max-w-xl mx-auto">
-        <input type="search" wire:model='search' placeholder="Cari donasi saya" class="py-2 px-3 rounded text-sm mb-2 focus:outline-none focus:ring" style="width:50%">
+        <input type="search" wire:model='search' placeholder="Cari donasi saya" class="py-2 px-3 rounded text-sm mb-5 focus:outline-none focus:ring" style="width:50%">
     </div>
 
-    @forelse($transactions as $transaction)
+    @forelse($transaction_pending as $transaction)
         <div class="max-w-xl mx-auto mb-3">
             <form action="#" method="post">
                 @csrf
@@ -20,7 +20,7 @@
         </div>
     @empty
         <div class="max-w-xl mx-auto">
-            <h5 class="text-coolGray-500">Donasi kamu belum ada</h5>
+            <h5 class="text-coolGray-500 text-sm">Donasi tidak ditemukan</h5>
         </div>
     @endforelse
 
@@ -30,3 +30,27 @@
         </div>
     @endif
 </div>
+
+@push('js')
+<script>
+    let snap_token = $("#snap_token").val()
+
+    $("#btn-pay").click(function() {
+        snap.pay(snap_token, {
+            // Optional
+            onSuccess: function(result) {
+                //window.location.href = '/donasi/finish'
+            },
+            // Optional
+            onPending: function(result) {
+                //window.location.href = '/donasi/finish'
+            },
+            // Optional
+            onError: function(result) {
+                //window.location.href = '/donasi/finish'
+            }
+        });
+    })
+
+</script>
+@endpush

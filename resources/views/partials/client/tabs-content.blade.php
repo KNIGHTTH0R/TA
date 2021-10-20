@@ -6,18 +6,22 @@
      <div id="second">
         @forelse($transactions as $transaction)
             <div class="flex p-2 md:pl-8 lg:p-3 mb-3">
-             <div class="pl-1 pr-5">
-                <img src="{{ $transaction->user->image }}" class="w-11 h-11 rounded-full">
-             </div>
-             <div class="flex-1">
-                 <h1 class="text-coolGray-700 font-semibold text-md">{{ $transaction->user->name }}</h1>
-                 <p class="mb-3 text-coolGray-500 font-medium text-md">Rp. {{ $transaction->amount }}</p>
-                 <p class="text-coolGray-600">{{ $transaction->pray ?? '' }}</p>
-             </div>
-         </div>
+                <div class="pl-1 pr-5">
+                    @if($transaction->anonim)
+                        {!! $transaction->user->anonim_img !!}
+                    @else
+                        <img src="{{ $transaction->user->image }}" class="w-10 h-10 rounded-full">
+                    @endif
+                </div>
+                <div class="flex-1">
+                    <h1 class="text-coolGray-700 font-semibold text-md">{{ $transaction->anonim ? 'Hamba Allah' : $transaction->user->name }}</h1>
+                    <p class="mb-3 text-coolGray-500 font-medium text-md">Rp. {{ $transaction->amount }}</p>
+                    <p class="text-coolGray-600">{{ $transaction->pray ?? '' }}</p>
+                </div>
+            </div>
          @empty
             <div>
-                <span class="block pl-4 text-coolGray-500">Belum ada donasi</span>
+                <span class="block pl-4 text-coolGray-500">Belum ada donatur</span>
             </div>
         @endforelse
 

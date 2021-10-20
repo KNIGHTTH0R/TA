@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
-use App\Models\Transaction;
+use App\Models\Transaction\Transaction;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -26,15 +26,13 @@ class DashboardController extends Controller
 
     public function history()
     {
-        $histories = $this->transaction->userId()->latest()->get();
+        $histories = $this->transaction->userId()->take(3)->get();
 
         return view('admin.dashboard.history', compact('histories'));
     }
 
     public function myDonate()
     {
-        $transaction_pending = $this->transaction->userId()->pending()->take(3)->get();
-
-        return view('admin.dashboard.my-donate', compact('transaction_pending'));
+        return view('admin.dashboard.my-donate');
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Campaign;
-use App\Models\Distribution;
+use App\Models\Campaign\Campaign;
+use App\Models\Distribution\Distribution;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DistributionFactory extends Factory

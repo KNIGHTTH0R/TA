@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
-use App\Models\Campaign;
-use App\Models\Transaction;
+use App\Models\Campaign\Campaign;
+use App\Models\Transaction\Transaction;
 use Illuminate\Http\Request;
 
 class CampaignController extends Controller
