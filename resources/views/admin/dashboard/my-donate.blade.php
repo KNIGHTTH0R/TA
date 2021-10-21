@@ -8,7 +8,7 @@
 
     <div class="container mx-auto">
         <div class="p-4 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
-            <h2 class="text-2xl font-bold leading-none sm:text-4xl">Donasi Saya</h2>
+            <x-admin.title title="Donasi Saya" />
         </div>
 
         <div class="flex p-4 md:p-8">

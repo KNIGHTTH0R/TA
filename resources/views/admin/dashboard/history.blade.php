@@ -7,7 +7,7 @@
 <section class="py-8 bg-coolGray-100 text-coolGray-800">
     <div class="container mx-auto">
         <div class="p-4 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
-            <h2 class="text-2xl font-bold leading-none sm:text-4xl">History Donasi</h2>
+            <x-admin.title title="Riwayat Donasi" />
         </div>
         <div class="flex p-4 md:p-8">
 
@@ -47,14 +47,12 @@
                                 </div>
                             </li>
                             @empty
-                            <span class="text-coolGray-400 text-md">Belum ada donasi</span>
+                                <x-admin.not-found message="Belum ada donasi" />
                             @endforelse
                         </ul>
                     </div>
                     @if(count($histories) > 3)
-                        <div class="flex justify-center">
-                            <button type="button" class="px-6 py-3 text-sm rounded-md hover:underline bg-coolGray-50 text-coolGray-600">Lebih banyak</button>
-                        </div>
+                        <x-admin.load-more />
                     @endif
                 </div>
             </div>

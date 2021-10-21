@@ -1,7 +1,6 @@
 <div>
-    <div class="max-w-xl mx-auto">
-        <input type="search" wire:model='search' placeholder="Cari donasi saya" class="py-2 px-3 rounded text-sm mb-5 focus:outline-none focus:ring" style="width:50%">
-    </div>
+
+   <x-admin.search />
 
     @forelse($transaction_pending as $transaction)
         <div class="max-w-xl mx-auto mb-3">
@@ -19,15 +18,11 @@
             </form>
         </div>
     @empty
-        <div class="max-w-xl mx-auto">
-            <h5 class="text-coolGray-500 text-sm">Donasi tidak ditemukan</h5>
-        </div>
+        <x-admin.not-found message="Donasi tidak ditemukan" />
     @endforelse
 
     @if (count($transaction_pending) > 3)
-        <div class="max-w-xl mx-auto">
-            <button type="button" class="px-6 py-3 text-sm rounded-md hover:underline bg-coolGray-50 text-coolGray-600">Lebih banyak</button>
-        </div>
+       <x-admin.load-more />
     @endif
 </div>
 

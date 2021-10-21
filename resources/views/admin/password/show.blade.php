@@ -8,7 +8,7 @@
 
     <div class="container mx-auto">
         <div class="p-4 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
-            <h2 class="text-2xl font-bold leading-none sm:text-4xl">Ubah Password</h2>
+            <x-admin.title title="Ubah Password" />
         </div>
 
         <div class="flex p-4 md:p-8">
@@ -49,9 +49,7 @@
                                     </div>
                                 </fieldset>
                                 <div class="mt-3">
-                                    <button type="submit" class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 ease-out transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-gray-600">
-                                        Update
-                                    </button>
+                                   <x-admin.button message="Update" />
                                 </div>
                             </form>
                         </div>
