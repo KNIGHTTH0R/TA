@@ -29,22 +29,18 @@
                                 <fieldset class="p-6 rounded-md shadow-sm bg-coolGray-50">
                                     <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                                         <div class="col-span-full sm:col-span-3">
-                                            <label for="password" class="text-sm">Password</label>
-                                            <input id="password" type="password" name="password" class="p-2 mt-2 w-full rounded-md focus:outline-none focus:ring focus:ring-opacity-75 focus:ring-violet-600 border-coolGray-300 text-coolGray-900" autocomplete="off">
-                                            @error('password')
-                                            <span class="text-red-400 text-sm">{{ $message }}</span>
-                                            @enderror
+                                            <x-auth.label name="Password"/>
+                                            <x-auth.input type="password" name="password" />
+                                            <x-auth.error name="password" />
                                         </div>
                                         <div class="col-span-full sm:col-span-3">
-                                            <label for="new-password" class="text-sm">New password</label>
-                                            <input id="new-password" type="password" name="new_password" class="p-2 mt-2 w-full rounded-md focus:outline-none focus:ring focus:ring-opacity-75 focus:ring-violet-600 border-coolGray-300 text-coolGray-900" autocomplete="off">
-                                            @error('new_password')
-                                            <span class="text-red-400 text-sm">{{ $message }}</span>
-                                            @enderror
+                                            <x-auth.label name="New password"/>
+                                            <x-auth.input type="password" name="new_password" />
+                                            <x-auth.error name="new_password" />
                                         </div>
                                         <div class="col-span-full sm:col-span-3">
-                                            <label for="confirm-new-password" class="text-sm">Confirm new password</label>
-                                            <input id="confirm-new-password" type="password" name="new_password_confirmation" class="p-2 mt-2 w-full rounded-md focus:outline-none focus:ring focus:ring-opacity-75 focus:ring-violet-600 border-coolGray-300 text-coolGray-900" autocomplete="off">
+                                            <x-auth.label name="Confirm new password"/>
+                                            <x-auth.input type="password" name="new_password_confirmation" />
                                         </div>
                                     </div>
                                 </fieldset>

@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 
-<body class="bg-coolGray-50 p-16 md:p-40 overflow-hidden">
-    <div class="w-full sm:max-w-xs md:max-w-sm lg:max-w-md p-6 m-auto bg-white rounded-md shadow-md dark:bg-gray-800">
-        <h1 class="text-3xl font-semibold text-center text-sky-600 dark:text-sky-400 mb-8">STT NF BISA</h1>
+<body class="bg-coolGray-100 p-16 md:p-40 overflow-hidden">
+    <div class="w-full sm:max-w-xs md:max-w-sm lg:max-w-md p-6 m-auto bg-coolGray-50 rounded-md shadow-md dark:bg-gray-800">
+
+        <x-auth.title title="Login" />
 
         @include('partials.admin.alert')
 
@@ -30,11 +31,11 @@
             </div>
 
             <div class="mt-6">
-                <x-client.button message="Masuk" />
+                <x-admin.button message="Masuk" />
             </div>
         </form>
 
-        <x-client.info-auth question="Belum punya akun?" route="auth.register" link="Daftar" />
+        <x-auth.info question="Belum punya akun?" route="auth.register" link="Daftar" />
 
     </div>
 </body>

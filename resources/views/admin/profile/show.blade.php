@@ -26,25 +26,19 @@
                                 <fieldset class="p-6 rounded-md shadow-sm bg-coolGray-50">
                                     <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                                         <div class="col-span-full sm:col-span-3">
-                                            <label for="name" class="text-sm">Nama</label>
-                                            <input id="name" type="text" name="name" class="p-2 mt-2 w-full rounded-md focus:outline-none focus:ring focus:ring-opacity-75 focus:ring-violet-600 border-coolGray-300 text-coolGray-900" value="{{ old('name', auth()->user()->name) }}" autocomplete="off">
-                                            @error('name')
-                                            <span class="text-red-400 text-sm">{{ $message }}</span>
-                                            @enderror
+                                            <x-auth.label name="Nama"/>
+                                            <x-auth.input type="text" name="name" data="{{ auth()->user()->name }}"/>
+                                            <x-auth.error name="name" />
                                         </div>
                                         <div class="col-span-full sm:col-span-3">
-                                            <label for="username" class="text-sm">Username</label>
-                                            <input id="username" type="text" name="username" class="p-2 mt-2 w-full rounded-md focus:outline-none focus:ring focus:ring-opacity-75 focus:ring-violet-600 border-coolGray-300 text-coolGray-900" value="{{ old('username', auth()->user()->username) }}" autocomplete="off">
-                                            @error('username')
-                                            <span class="text-red-400 text-sm">{{ $message }}</span>
-                                            @enderror
+                                           <x-auth.label name="Username"/>
+                                            <x-auth.input type="text" name="username" data="{{ auth()->user()->username }}"/>
+                                            <x-auth.error name="username" />
                                         </div>
                                         <div class="col-span-full sm:col-span-3">
-                                            <label for="email" class="text-sm">Email</label>
-                                            <input id="email" type="email" name="email" class="p-2 mt-2 w-full rounded-md focus:outline-none focus:ring focus:ring-opacity-75 focus:ring-violet-600 border-coolGray-300 text-coolGray-900" value="{{ old('email', auth()->user()->email) }}" autocomplete="off">
-                                            @error('email')
-                                            <span class="text-red-400 text-sm">{{ $message }}</span>
-                                            @enderror
+                                            <x-auth.label name="Email"/>
+                                            <x-auth.input type="email" name="email" data="{{ auth()->user()->email }}"/>
+                                            <x-auth.error name="email" />
                                         </div>
                                     </div>
                                 </fieldset>

@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 
-<body class="bg-coolGray-50 p-14 md:p-10">
-    <div class="w-full sm:max-w-xs md:max-w-sm lg:max-w-md p-6 m-auto bg-white rounded-md shadow-md dark:bg-gray-800">
-        <h1 class="text-3xl font-semibold text-center text-sky-600 dark:text-sky-400 mb-8">Register</h1>
+<body class="bg-coolGray-100 p-14 md:p-10">
+    <div class="w-full sm:max-w-xs md:max-w-sm lg:max-w-md p-6 m-auto bg-coolGray-50 rounded-md shadow-md dark:bg-gray-800">
+
+        <x-auth.title title="Register" />
+
         <form action="{{ route('auth.register') }}" method="post">
             @csrf
             <div>
@@ -44,11 +46,11 @@
             </div>
 
             <div class="mt-6">
-                <x-client.button message="Masuk" />
+                <x-admin.button message="Masuk" />
             </div>
         </form>
 
-        <x-client.info-auth question="Sudah punya akun?" route="auth.login" link="Masuk" />
+        <x-auth.info question="Sudah punya akun?" route="auth.login" link="Masuk" />
 
     </div>
 </body>
