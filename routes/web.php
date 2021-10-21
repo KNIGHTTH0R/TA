@@ -6,6 +6,7 @@ use App\Http\Controllers\Client\CampaignController;
 use App\Http\Controllers\Client\DashboardController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\TransactionController;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,9 @@ Route::prefix('auth')->as('auth.')->group(function() {
 
             Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
             Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+            Route::get('/change-password', [PasswordController::class, 'show'])->name('password.show');
+            Route::put('/change-password', [PasswordController::class, 'update'])->name('password.update');
         });
 
 

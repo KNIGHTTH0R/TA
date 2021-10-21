@@ -12,6 +12,9 @@
 <body class="bg-coolGray-50 p-16 md:p-40 overflow-hidden">
     <div class="w-full sm:max-w-xs md:max-w-sm lg:max-w-md p-6 m-auto bg-white rounded-md shadow-md dark:bg-gray-800">
         <h1 class="text-3xl font-semibold text-center text-sky-600 dark:text-sky-400 mb-8">STT NF BISA</h1>
+
+        @include('partials.admin.alert')
+
         <form action="{{ route('auth.login') }}" method="post">
             @csrf
             <div>
@@ -29,8 +32,6 @@
                     <span class="text-red-400 text-sm">{{ $message }}</span>
                 @enderror
             </div>
-
-            {{-- <span class="block text-red-400 text-sm mt-2">username or password is incorrect</span> --}}
 
             <div class="mt-6">
                 <button class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 ease-out transform bg-sky-600 rounded-md hover:bg-sky-500 focus:outline-none focus:bg-gray-600">

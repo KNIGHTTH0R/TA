@@ -21,10 +21,10 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if (Auth::attempt($credential)) {
-            return redirect()->intended(RouteServiceProvider::HOME);
+        if (!Auth::attempt($credential)) {
+            return back()->with('failure', 'Username or password is invalid');
         }
 
-        dd('credential wrong');
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 }

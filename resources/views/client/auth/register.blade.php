@@ -50,9 +50,6 @@
             <div class="mt-3">
                 <label for="password" class="block text-sm text-gray-800 dark:text-gray-200">Confirm Password</label>
                 <input type="password" name="password_confirmation" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
-                @error('confirm_password')
-                    <span class="text-red-400 text-sm">{{ $message }}</span>
-                @enderror
             </div>
 
             <div class="mt-6">
