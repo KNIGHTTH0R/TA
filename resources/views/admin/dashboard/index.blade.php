@@ -6,7 +6,7 @@
 <section class="py-8 bg-coolGray-100 text-coolGray-800">
     <div class="container mx-auto">
         <div class="p-4 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
-            <h2 class="text-2xl font-bold leading-none sm:text-4xl">Dashboard</h2>
+            <x-admin.title title="Dashboard"/>
         </div>
         <div class="flex p-4 md:p-8">
 
