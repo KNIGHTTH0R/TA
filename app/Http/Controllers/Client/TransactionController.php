@@ -119,7 +119,7 @@ class TransactionController extends Controller
             $transaction->update(['status' => 'pending']);
         } elseif ($transaction_status == 'cancel') {
             $transaction->update(['status' => 'cancel']);
-        } else { // deny or failed
+        } else { // deny, failed, or expire
             $transaction->update(['status' => 'failed']);
         }
     }
