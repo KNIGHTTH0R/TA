@@ -39,15 +39,15 @@
         snap.pay(snap_token, {
             // Optional
             onSuccess: function(result) {
-                //window.location.href = '/donasi/finish'
+                window.location.href = '/donasi/finish'
             },
             // Optional
             onPending: function(result) {
-                //window.location.href = '/donasi/finish'
+                window.location.href = '/donasi/finish'
             },
             // Optional
             onError: function(result) {
-                //window.location.href = '/donasi/finish'
+                window.location.href = '/donasi/finish'
             }
         });
     })
