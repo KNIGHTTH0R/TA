@@ -22,7 +22,7 @@
                         @include('partials.admin.alert')
 
                         <div class="bg-coolGray-100 text-coolGray-900">
-                            <form method="post" action="{{ route('auth.password.update') }}" class="container flex flex-col mx-auto space-y-10">
+                            <x-form method="post" action="auth.password.update">
                                 @csrf
                                 @method('put')
 
@@ -47,7 +47,7 @@
                                 <div class="mt-3">
                                    <x-admin.button message="Update" />
                                 </div>
-                            </form>
+                            </x-form>
                         </div>
                     </div>
                 </div>

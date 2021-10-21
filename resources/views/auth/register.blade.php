@@ -14,7 +14,7 @@
 
         <x-auth.title title="Register" />
 
-        <form action="{{ route('auth.register') }}" method="post">
+        <x-form action="auth.register" method="post">
             @csrf
             <div>
                 <x-auth.label name="Nama" />
@@ -48,7 +48,7 @@
             <div class="mt-6">
                 <x-admin.button message="Masuk" />
             </div>
-        </form>
+        </x-form>
 
         <x-auth.info question="Sudah punya akun?" route="auth.login" link="Masuk" />
 

@@ -16,6 +16,6 @@ class ProfileController extends Controller
     {
         auth()->user()->update($request->validated());
 
-        return back();
+        return back()->with('success', 'Profile has been successfully updated');
     }
 }

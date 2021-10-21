@@ -18,8 +18,11 @@
             <div class="flex flex-1 pt-5">
                 <div class="container px-4 mx-auto space-y-8 lg:max-w-3xl">
                     <div class="max-w-xl mx-auto">
+
+                        @include('partials.admin.alert')
+
                         <div class="bg-coolGray-100 text-coolGray-900">
-                            <form method="post" action="{{ route('auth.profile.update') }}" class="container flex flex-col mx-auto space-y-10">
+                            <x-form method="post" action="auth.profile.update">
                                 @csrf
                                 @method('put')
 
@@ -45,7 +48,7 @@
                                 <div class="mt-3">
                                    <x-admin.button message="Update" />
                                 </div>
-                            </form>
+                            </x-form>
                         </div>
                     </div>
                 </div>

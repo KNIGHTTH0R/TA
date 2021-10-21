@@ -16,7 +16,7 @@
 
         @include('partials.admin.alert')
 
-        <form action="{{ route('auth.login') }}" method="post">
+        <x-form action="auth.login" method="post">
             @csrf
             <div>
                 <x-auth.label name="Username" />
@@ -33,7 +33,7 @@
             <div class="mt-6">
                 <x-admin.button message="Masuk" />
             </div>
-        </form>
+        </x-form>
 
         <x-auth.info question="Belum punya akun?" route="auth.register" link="Daftar" />
 
